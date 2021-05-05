@@ -11,16 +11,14 @@ namespace MaxNumberGenerics
             double[] doubleArray = { 26.7, 49.86, 98.6 };
             string[] stringArray = { "25.6", "89.5", "93.5" };
 
-            Program.MaxxNumbCheck<int>(intArray);
-            Program.MaxxNumbCheck<double>(doubleArray);
-            Program.MaxxNumbCheck<string>(stringArray);
-            
+            GenericMax<int> genericMaxInt = new GenericMax<int>(intArray);
+            genericMaxInt.PrintmaxValue();
+            GenericMax<double> genericMaxDouble = new GenericMax<double>(doubleArray);
+            genericMaxDouble.PrintmaxValue();
+            GenericMax<string> genericMaxString = new GenericMax<string>(stringArray);
+            genericMaxString.PrintmaxValue();
+            Console.ReadKey();
         }
-        public static void MaxxNumbCheck<T>(T[] Array)
-        {
-            var output = Array.Max();
-            Console.WriteLine(output);
-            Console.WriteLine("************");
-        }
+       
     }
 }
